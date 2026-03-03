@@ -1,8 +1,12 @@
 ---
-title: "Quarto website template"
+title: "SMSN Quarto workshop template and materials"
 author: Tom Coleman
 format: html
 ---
+
+[Download source files from the GitHub repository at this link](https://github.com/tdhc153/smsn-quarto-workshop)
+
+[Download the book template from the GitHub repository at this link](https://github.com/tdhc153/smsn-quarto-workshop-book)
 
 [Quarto resource template](resourcetemplate.qmd)
 
@@ -18,8 +22,10 @@ To participate in this workshop, you will need to download either RStudio to you
 
 [Any problems? Please contact me at tdhc (at) st (dash) andrews (dot) ac (dot) uk.](mailto:tdhc@st-andrews.ac.uk)
 
+[These materials are subject to a CC BY-NC-SA 4.0 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license.](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 ## After the session/using the resources
 
-I would be very grateful if you took the time to fill in a Google form about today's workshop, in order to improve the workshop for potential future runnings and to help me understand the impact of today's workshop. All submissions are entirely anonymous.
+I would be very grateful if you took the time to fill in a Google form about the workshop/materials, in order to improve the workshop for potential future runnings and to help me understand the impact of today's workshop. All submissions are entirely anonymous.
 
-![You can find the form at this QR code or at this link: <https://forms.gle/UeS478kobWTYbWDi9>](./figures/qr.png){width="75%" fig-align="center"}
+![You can find the form at this QR code or at this link: <https://forms.gle/UeS478kobWTYbWDi9>](./figures/qr.png){width="50%" fig-align="center"}

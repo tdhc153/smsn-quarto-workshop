@@ -102,7 +102,7 @@
     "href": "masterslidedeck.html#standalone-quarto-documents",
     "title": "SMSN Quarto workshop",
     "section": "Standalone Quarto documents",
-    "text": "Standalone Quarto documents\nThis may seem like too much… and it is. You are able to build standalone quarto documents with a single .qmd file.\nHowever, I often find it more sensible to have one directory/R Project per thing:\n\nkeeps all working on the thing together\neasier to handle multiple .qmd files at once (questions.qmd, answers.qmd, for instance)\nbetter architecture for multiple outputs by using global settings\npublishing the content to a private GitHub repo allows you to use Pages to host your material online."
+    "text": "Standalone Quarto documents\nThis may seem like too much… and it is. You are able to build standalone quarto documents with a single .qmd file.\nHowever, I often find it more sensible to have one directory/R Project per thing:\n\nkeeps all working on the thing together\neasier to handle multiple .qmd files at once (questions.qmd, answers.qmd, for instance)\nbetter architecture for multiple outputs by using global settings\npublishing the project to a GitHub repo allows you to use GitHub Pages to host your material online, with a public URL."
   },
   {
     "objectID": "masterslidedeck.html#how-to-write",
@@ -520,15 +520,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quarto website template",
+    "title": "SMSN Quarto workshop template and materials",
     "section": "",
-    "text": "Quarto resource template\nQuarto slides template\nSlides used in the workshop\nQuarto is a powerful open-source typesetting language. Boasting both R and Python functionality, it can be used to write a huge range of outputs including short-form html documents, interactive Python or R workbooks via Jupyter, dynamic accessible slides, or even traditional lecture notes.\nThis hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover: how to build Quarto documents, writing content in Quarto, working with revealjs slides, and working with longer-form documents such as lecture notes. Templates will be provided for ease of use.\nTo participate in this workshop, you will need to download either RStudio to your computer, or to use Posit Cloud (a free cloud-based service to run RStudio projects) during the session.\nAny problems? Please contact me at tdhc (at) st (dash) andrews (dot) ac (dot) uk."
+    "text": "Download source files from the GitHub repository at this link\nDownload the book template from the GitHub repository at this link\nQuarto resource template\nQuarto slides template\nSlides used in the workshop\nQuarto is a powerful open-source typesetting language. Boasting both R and Python functionality, it can be used to write a huge range of outputs including short-form html documents, interactive Python or R workbooks via Jupyter, dynamic accessible slides, or even traditional lecture notes.\nThis hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover: how to build Quarto documents, writing content in Quarto, working with revealjs slides, and working with longer-form documents such as lecture notes. Templates will be provided for ease of use.\nTo participate in this workshop, you will need to download either RStudio to your computer, or to use Posit Cloud (a free cloud-based service to run RStudio projects) during the session.\nAny problems? Please contact me at tdhc (at) st (dash) andrews (dot) ac (dot) uk.\nThese materials are subject to a CC BY-NC-SA 4.0 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license."
   },
   {
     "objectID": "index.html#after-the-sessionusing-the-resources",
     "href": "index.html#after-the-sessionusing-the-resources",
-    "title": "Quarto website template",
+    "title": "SMSN Quarto workshop template and materials",
     "section": "After the session/using the resources",
-    "text": "After the session/using the resources\nI would be very grateful if you took the time to fill in a Google form about today’s workshop, in order to improve the workshop for potential future runnings and to help me understand the impact of today’s workshop. All submissions are entirely anonymous.\n\n\n\nYou can find the form at this QR code or at this link: https://forms.gle/UeS478kobWTYbWDi9"
+    "text": "After the session/using the resources\nI would be very grateful if you took the time to fill in a Google form about the workshop/materials, in order to improve the workshop for potential future runnings and to help me understand the impact of today’s workshop. All submissions are entirely anonymous.\n\n\n\nYou can find the form at this QR code or at this link: https://forms.gle/UeS478kobWTYbWDi9"
   }
 ]
