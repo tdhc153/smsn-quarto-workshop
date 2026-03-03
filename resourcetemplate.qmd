@@ -1,0 +1,339 @@
+---
+title: "SMSN Quarto workshop: resource template"
+subtitle: Accessible documents for all :)
+author: Tom Coleman (University of St Andrews)
+date: 2026-03-04
+format: html
+---
+
+## Text formatting
+
+Quarto supports lots of different ways to format text:
+
+| style | syntax | example |
+|:------|:-----------|:----------------|
+| bold | `**text**` | **a bold move** |
+| italics | `*text*` | *the Italic Version* |
+| both | `***text***` | ***a bold Italic move*** |
+| strikethrough | `~~text~~` | ~~struck out~~ |
+| super/subscript | `te^xt^, te~xt~` | super^script^, sub~script~ |
+| underline | `[text]{.underline}` | [I hate underlining.]{.underline} |
+| small caps | `[text]{.smallcaps}` | [I also hate smallcaps.]{.smallcaps} |
+| highlighted | `[text]{.mark}` | [I don't mind highlighting.]{.mark} |
+
+## Headings
+
+There are six levels of headings in Quarto, and you can reach any of these by using an appropriate amount of `#` keys before the heading title. 
+
+```{.quarto}
+# Chapter style heading
+## Section style heading
+### Subsection style heading
+```
+
+and so on.
+
+:::{.callout-tip}
+
+To make an unnumbered section (pdf, word), add `{-}` or `{.nonumber}` after the heading title.
+
+:::
+
+:::{.callout-note}
+
+Headings work differently in revealjs or other presentation formats; see Part 3 for more.
+
+:::
+
+## Hyperlinks
+
+You can hyperlink to other pages in your website project:
+
+- link to page: `[slides template](slidestemplate.qmd)` gives [slides template](slidestemplate.qmd)
+
+There are two ways to include hyperlinks to external sites:
+
+- plain: `<https://github.com/>` gives <https://github.com/>.
+
+- regular: `[click here find more on hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images)` gives [click here to go to GitHub](https://quarto.org/docs/authoring/markdown-basics.html#links-images).
+
+:::{.callout-tip}
+
+You can use standard file path syntax to hyperlink things in different folders. For example `[link](./1/2.qmd)` links to the file `2.qmd` in the subfolder `1`, and `[link](../3.qmd)` links to the file `3.qmd` in the parent folder of the qmd file you are working on.
+
+:::
+
+## Lists
+
+In this example of a list, the dash `-` is used, but you can also use `+` or `*`. (Note: other mathematical operators are as yet untested.)
+
+The spacing here between sublists is important and come in multiples of 2 for unordered lists and 4 for ordered lists. 
+
+[Notice the brackets in the ordered lists - they do nothing.](./figures/thebracketsdonothing.png)
+
+
+```{.quarto}
+- first unordered item
+- second unordered item
+  - first subitem
+    - first subsubitem
+  - second subitem
+- third item 
+```
+
+- first unordered item
+- second unordered item
+  - first subitem
+    - first subsubitem
+  - second subitem
+- third item 
+
+
+```{.quarto}
+1. ordered item
+    a) ordered subitem
+    b) ordered subitem
+        i. subsubitem
+2. second ordered item
+```
+
+1. ordered item
+    a) ordered subitem
+    b) ordered subitem
+        i. subsubitem
+2. second ordered item
+
+Quarto is slightly fiddly when it comes to list continuations.
+
+Any list in Quarto requires an entire blank line before the list starts.
+
+[Click here to find more on lists.](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+
+```{.quarto}
+- first unordered item
+
+    continue with your text here
+    
+- second unordered item
+```
+
+- first unordered item
+
+    continue with your text here
+    
+- second unordered item
+
+
+```{.quarto}
+(@) List item 1!
+
+The list writer is too enthusiastic. 
+
+(@) List item 2.
+
+```
+
+(@) List item 1!
+
+The list writer is too enthusiastic. 
+
+(@) List item 2.
+
+
+## Tables
+
+```{.quarto}
+| Right | Left    | Default  | Center      |
+|------:|:--------|----------|:-----------:|
+| Tom   | takes   | great    |  happiness  |
+| in    | writing | Markdown |  tables     |
+
+: Tom's table time {tbl-colwidths="[20,25,25,30]"}
+```
+
+ 
+
+| Right | Left    | Default  | Center      |
+|------:|:--------|----------|:-----------:|
+| Tom   | takes   | great    |  happiness  |
+| in    | writing | Markdown |  tables     |
+
+: Tom's table time {tbl-colwidths="[20,25,25,30]"}
+
+ 
+
+[Quarto can also import tables from csv files and parse html table syntax. For more on this and tables in general, click here.](https://quarto.org/docs/authoring/tables.html)
+
+## Images and figures
+
+```{.quarto}
+!['Assistance' in writing this course was provided by Mimi (pictured).](./figures/mimi.png){width="75%" fig-alt="A picture of a beautiful tabby cat sitting in front of a laptop on a carpet, with sunlight streaming in through bay windows." fig-align="left"}
+```
+
+The syntax here implies that captioning is mandatory for images; you can leave it blank if needed. What you should definitely have is alt-text, which is provided by the fig-alt; it appears in the html output for access by screen readers.
+
+!['Assistance' in writing this course was provided by Mimi (pictured).](./figures/mimi.png){width="75%" fig-alt="A picture of a beautiful tabby cat sitting in front of a laptop on a carpet, with sunlight streaming in through bay windows." fig-align="left"}
+
+```{.quarto}
+![Mimi in calmer times.](./figures/mimiagain.png){width="75%" fig-alt="A picture of the same beautiful tabby cat, sitting in front of a window." fig-align="right" #fig-mimiagain}
+```
+
+Nothing else here to say, just wanted to show more pictures of cats.
+
+Actually, that's a lie; I've identified this as a figure for cross-referencing purposes later in the talk.
+
+[Oh, and click here if you want to learn more about figures.](https://quarto.org/docs/authoring/figures.html)
+
+![Mimi in calmer times.](./figures/mimiagain.png){width="75%" fig-alt="A picture of the same beautiful tabby cat, sitting in front of a window." fig-align="right" #fig-mimiagain}
+
+## Videos 
+Here's how to video.
+
+```{.quarto}
+{{ < video ./figures/mimivideo.mp4 width="270" height="480" title="Mimi is petted."> }}
+```
+
+This is a video included as a local file, but you can use YouTube links as well to embed videos in your document. 
+
+[Oh, and click here if you want to learn more about videos.](https://quarto.org/docs/authoring/figures.html)
+
+{{< video ./figures/mimivideo.mp4 width="270" height="480" title="Mimi is petted.">}}
+
+## Maths
+
+All maths syntax is provided by LaTeX commands, with accessibility support provided by MathJax.
+
+Inline maths is represented by single dollars: for instance `$\{n > 0\; : \; n\in\mathbb{N}$` provides $\{n > 0\; : \; n\in\mathbb{Z}\}$.
+
+Display maths is represented by double dollars: for instance 
+```{.quarto}
+$$(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^{n-k}y^k.$$
+```
+gives 
+$$(x+y)^n = \sum_{k=0}^n\binom{n}{k}x^{n-k}y^k.$$
+
+:::{.callout-tip}
+
+Output of maths in MS Word is given by their native editor. It does not really recognise custom commands, but these can be used in other formats.
+
+To produce an array of equations outputtable in all formats, use `$$\begin{aligned}...\end{aligned}$$` and treat this as an `eqnarray` environment.
+
+:::
+
+## Code blocks
+
+You can display blocks of code, using the following syntax:
+
+```{.quarto}
+(three ticks){.python}
+import math
+def binomial_coefficient(n, k):
+    return math.comb(n, k)
+binomial_coefficient(10,6)
+(three ticks)
+```
+
+to get
+
+```{.python}
+import math
+def binomial_coefficient(n, k):
+    return math.comb(n, k)
+binomial_coefficient(10,6)
+```
+
+Pandoc supports highlighting for 140 languages. [For more about code blocks, particularly in html, you can see this link here.](https://quarto.org/docs/output-formats/html-code.html)
+
+## Code chunks
+
+You can include snippets of code to be run by Quarto as it builds your document, using the following syntax:
+
+```{.quarto}
+(three ticks){r}
+#| echo: true
+binom_coeff <- function(n, k) {
+  if (k < 0 || k > n) return(0)
+  choose(n, k)
+}
+binom_coeff(10, 6)
+(three ticks)
+```
+
+to get
+
+```{r}
+#| echo: true
+binom_coeff <- function(n, k) {
+  if (k < 0 || k > n) return(0)
+  choose(n, k)
+}
+binom_coeff(10, 6)
+```
+
+which is what you'd expect as $\displaystyle \binom{10}{6}$ is 210.
+
+:::{.callout-tip}
+
+Add options to executable code chunks by `#| option: value` directly below the three ticks and `{r}` For instance, you can stop Quarto from displaying the code above by amending to `#| echo: false`.
+
+:::
+
+## Embedding stuff 
+
+You can embed raw content into your Quarto file. For instance: 
+
+```{.quarto}
+(three ticks){=html}
+embeddable content
+(three ticks)
+```
+
+In addition, you can embed output content from another Quarto workbook (such as a Jupyter notebook) into a html file for ease of use. [Please click this link to find more.](https://quarto.org/docs/authoring/notebook-embed.html)
+
+
+```{=html}
+<iframe src="https://www.desmos.com/calculator/hj1dhkso2g?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+```
+
+
+## Cross-references
+
+Internal cross-references can be put into figures, tables, section headings. 
+
+To do this, you need a **label** and a **reference** somewhere in the text.
+
+Labels always have the following form `#identifier-string` where 'identifier' is a preset identifier prefix and 'string' is a string of text. Identifier prefixes include `fig` (figure), `tbl` (table), `eq` (equation), `sec` (section), `lst` (code block);
+
+To reference a label in the text, write `@identifier-string`. This creates a reference, like @fig-mimiagain. [Click this link to find out more about cross-referencing](https://quarto.org/docs/authoring/cross-references.html).
+
+## Callout blocks
+
+Here's a callout block; divs that draw attention to things. 
+
+```{.quarto}
+:::{.callout-note}
+There are five types of callout block; note (identifier prefix `not`), warning (identifier prefix `war`), important (identifier prefix `imp`), caution (identifier prefix `cau`), tip (identifier prefix `tip`). Replace 'note' in `callout-note` above to get your desired box.
+:::
+```
+
+:::{.callout-note}
+There are five types of callout block; note (identifier prefix `not`), warning (identifier prefix `war`), important (identifier prefix `imp`), caution (identifier prefix `cau`), tip (identifier prefix `tip`). Replace 'note' in `callout-note` above to get your desired box.
+:::
+
+Callout boxes also exist for mathematical environments, but these do not count sequentially. (See Part 4.) 
+
+[Click here to find out about callout boxes.](https://quarto.org/docs/authoring/callouts.html)
+
+## Conditional content
+
+You might want to have an interactive html version of a document coupled to a printable pdf version, where interactivity between the two could display very differently. You could use **conditional content** to facilitate this. 
+
+```{.quarto}
+::: {.content-visible when-format="html"}
+
+Will only appear in html.
+
+:::
+```
+
+You can change `visible` to `hidden`, and `when` to `unless`, and `html` to `genericoutput` to fully facilitate all possible options. 

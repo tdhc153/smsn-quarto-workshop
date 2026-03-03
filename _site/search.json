@@ -1,0 +1,534 @@
+[
+  {
+    "objectID": "masterslidedeck.html#why-quarto",
+    "href": "masterslidedeck.html#why-quarto",
+    "title": "SMSN Quarto workshop",
+    "section": "Why Quarto?",
+    "text": "Why Quarto?\nQuarto is a powerful open-source typesetting language. Including both R and Python functionality, it can be used to write a huge range of outputs including full websites of html pages, interactive Python or R workbooks via Jupyter, dynamic and accessible slides, or even traditional lecture notes."
+  },
+  {
+    "objectID": "masterslidedeck.html#structure-of-the-workshop",
+    "href": "masterslidedeck.html#structure-of-the-workshop",
+    "title": "SMSN Quarto workshop",
+    "section": "Structure of the workshop",
+    "text": "Structure of the workshop\nThis hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover:\n\nhow to build Quarto documents (Part 1)\nwriting content in Quarto (Part 2)\nworking with revealjs slides (Part 3)\nauthoring longer-form documents such as lecture notes (Part 4).\n\nTemplates are provided."
+  },
+  {
+    "objectID": "masterslidedeck.html#lets-get-started",
+    "href": "masterslidedeck.html#lets-get-started",
+    "title": "SMSN Quarto workshop",
+    "section": "Let’s get started",
+    "text": "Let’s get started\n\nOpen up your editor of choice.\nDownload the Quarto template from [LINK] either locally (R Studio) or onto your cloud (Posit Cloud)\nIf using R Studio or Posit Cloud, open up the .RProj file, and then open index.qmd inside the project. If not, open up index.qmd.\nClick ‘Render’ above the source code (if using R Studio or Posit Cloud) or render in another way if using another editor.\nThe html should appear on your preferred browser."
+  },
+  {
+    "objectID": "masterslidedeck.html#creating-your-own-file",
+    "href": "masterslidedeck.html#creating-your-own-file",
+    "title": "SMSN Quarto workshop",
+    "section": "Creating your own file",
+    "text": "Creating your own file\n\nIn the same R Studio session/same directory as index.qmd file, duplicate the index.qmd file and rename it to (filenameofyourchoice).qmd.\nChange the title and author at the top to an appopriate title and appropriate author.\nType ‘Hello universe’ underneath the bottom three dashes ---.\nClick ‘Render’ above the source code (if using R Studio or Posit Cloud) or render in another way if using another editor.\nThe html should appear on your preferred browser."
+  },
+  {
+    "objectID": "masterslidedeck.html#structure-of-a-quarto-document-12",
+    "href": "masterslidedeck.html#structure-of-a-quarto-document-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Structure of a Quarto document (1/2)",
+    "text": "Structure of a Quarto document (1/2)\nIn your file, there are two distinct parts: the YAML header and the content.\nThe YAML header, contained between three dashes ---, is written in a language called YAML, and provides local options for the .qmd page (such as a title, author, preferred format, abstract, etc.)\nEverything after that is the content, and can include almost anything you want, from writing to code."
+  },
+  {
+    "objectID": "masterslidedeck.html#structure-of-a-quarto-document-22",
+    "href": "masterslidedeck.html#structure-of-a-quarto-document-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Structure of a Quarto document (2/2)",
+    "text": "Structure of a Quarto document (2/2)\nThere are a few main ways to provide flavour to your writing. Of note are\n\nspans [](){} that provide in-line formatting\ndiv blocks :::{.divname} ... ::: providing formatting to blocks of text\ncode blocks to display code (three backticks, space)\ncode chunks, which are blocks of executable code that Quarto runs during the rendering process, outputting a result (such as using R to provide a figure).\ncomments &lt;!-- this is commented out --&gt; (in R Studio, highlight and Ctrl/Cmd + Shift + C)\n\n\n\n\n\n\n\nWarning\n\n\nCode chunks are not in general executable on the html Quarto output; you will need to use a specialised format such as a Jupyter notebook to enable this functionality."
+  },
+  {
+    "objectID": "masterslidedeck.html#structure-of-the-yaml-header-or-.yml-file-12",
+    "href": "masterslidedeck.html#structure-of-the-yaml-header-or-.yml-file-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Structure of the YAML header or .yml file (1/2)",
+    "text": "Structure of the YAML header or .yml file (1/2)\nHere is the structure of the YAML header for this slidedeck:\n---\ntitle: \"SMSN Quarto workshop\"\nsubtitle: Accessible documents for all :)\nauthor: Tom Coleman (University of St Andrews)\ndate: 2026-03-04\nformat: \n  revealjs:\n    theme: default\n---\nYou’ll notice that revealjs: is indented by two spaces, and theme: is indented by two spaces after that. These are different option levels for format:, and option levels are always in multiples of two spaces."
+  },
+  {
+    "objectID": "masterslidedeck.html#structure-of-the-yaml-header-or-.yml-file-22",
+    "href": "masterslidedeck.html#structure-of-the-yaml-header-or-.yml-file-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Structure of the YAML header or .yml file (2/2)",
+    "text": "Structure of the YAML header or .yml file (2/2)\nYou can create lists of options by using multiple - at different option levels. For instance, changing format: html in your .qmd file to\nformat:\n  - html\n  - docx\nwill build this file in both html and docx formats. Adding to the .yml file will build all documents in both html and docx formats.\nIf you wanted to add options to both of these, you will need a slightly different format:\nformat:\n  html:\n    option1: true\n    option2: false\n  docx:\n    option3: false\nA comprehensive list of options, commands, spans, everything, can be found at Quarto’s excellent reference guide (click here)"
+  },
+  {
+    "objectID": "masterslidedeck.html#what-happens-when-you-render",
+    "href": "masterslidedeck.html#what-happens-when-you-render",
+    "title": "SMSN Quarto workshop",
+    "section": "What happens when you render",
+    "text": "What happens when you render\nEvery time you click render on a .qmd file, Quarto ‘knits’ any code chunks by running the code, puts it into a Markdown (.md) file, then uses Pandoc to convert to the file format(s) specified in the YAML/.yml. These file formats include (but are not limited to):\n\nhtml (for websites, default output)\npdf (via LaTeX, need a TeX distro or the R package tinytex)\nMS Word\nrevealjs (html presentation format, like this)\nJupyter notebooks (interactive Python/R notebooks)\n\nand many, many, many more"
+  },
+  {
+    "objectID": "masterslidedeck.html#quarto-project-types",
+    "href": "masterslidedeck.html#quarto-project-types",
+    "title": "SMSN Quarto workshop",
+    "section": "Quarto project types",
+    "text": "Quarto project types\nThere are many types of Quarto project.\n\nwebsite (what this template is on)\nbook (what the other template is written on, see Part 4)\nmanuscript (for more formal scientific writing)\nblog (for less formal scientific writing, amongst other things)\n\nThis workshop will be based on the website project class, with Part 4 using the book project class."
+  },
+  {
+    "objectID": "masterslidedeck.html#architecture-of-a-quarto-website",
+    "href": "masterslidedeck.html#architecture-of-a-quarto-website",
+    "title": "SMSN Quarto workshop",
+    "section": "Architecture of a Quarto website",
+    "text": "Architecture of a Quarto website\nEvery buildable quarto website requires the following, which you can see in the directory\n\nindex.qmd (root document)\n(underscore)quarto.yml (global settings)\n\nYou might have .qmd files for different parts of your quarto project; these are optional.\nThe template also comes with two more files in the directory:\n\nan R Project file (workspace image for R Studio)\npresentation-blue.css (make my slide deck look pretty :) )"
+  },
+  {
+    "objectID": "masterslidedeck.html#building-a-document-12",
+    "href": "masterslidedeck.html#building-a-document-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Building a document (1/2)",
+    "text": "Building a document (1/2)\nIf you want to build a single qmd file, in or outside of a project environment, then clicking the ‘Render’ button as before will provide a preview of this page in your browser.\nThis is very useful for checking small changes to a single .qmd file as you go along, or preparing a single .qmd file for publication.\nHowever, if you have multiple .qmd files in your project, this is not enough to put in all the necessary architecture when preparing a website for publication."
+  },
+  {
+    "objectID": "masterslidedeck.html#building-a-website-22",
+    "href": "masterslidedeck.html#building-a-website-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Building a website (2/2)",
+    "text": "Building a website (2/2)\nTo prepare a full website for publication, you will need to run a full render command. To do this in R Studio, first:\n\nsave all of your documents\n\nthen click ‘Build’ and then ‘Render Website’, or enter the following command in the console:\n\nquarto::quarto_render()\n\nWhat this does is build every .qmd file in the directory, and puts it in the _site folder. This is then a fully working website, with all interconnected links working, ready for publication."
+  },
+  {
+    "objectID": "masterslidedeck.html#tips-for-building",
+    "href": "masterslidedeck.html#tips-for-building",
+    "title": "SMSN Quarto workshop",
+    "section": "Tips for building",
+    "text": "Tips for building\n\n\n\n\n\n\nTip\n\n\n\nTo omit a file from a global build, put an underscore _ in front of the file name. This machinery is used by Quarto to avoid building the global .yml file and any files in _site.\nTo omit a single file from the finished product, include draft: true in the YAML header. This will still build the file, but any links to it will not be created in the final product and it will not exist on any listings.\nAn example of a complex website architecture using Quarto can be found by clicking this sentence."
+  },
+  {
+    "objectID": "masterslidedeck.html#standalone-quarto-documents",
+    "href": "masterslidedeck.html#standalone-quarto-documents",
+    "title": "SMSN Quarto workshop",
+    "section": "Standalone Quarto documents",
+    "text": "Standalone Quarto documents\nThis may seem like too much… and it is. You are able to build standalone quarto documents with a single .qmd file.\nHowever, I often find it more sensible to have one directory/R Project per thing:\n\nkeeps all working on the thing together\neasier to handle multiple .qmd files at once (questions.qmd, answers.qmd, for instance)\nbetter architecture for multiple outputs by using global settings\npublishing the content to a private GitHub repo allows you to use Pages to host your material online."
+  },
+  {
+    "objectID": "masterslidedeck.html#how-to-write",
+    "href": "masterslidedeck.html#how-to-write",
+    "title": "SMSN Quarto workshop",
+    "section": "How to write",
+    "text": "How to write\nQuarto is based on the Markdown language, and as such, uses Markdown syntax. If you are familiar with how to write Markdown, then what follows might already be second nature to you.\nIf you are not familiar with Markdown, then here is how to write stuff in Quarto.\nI will try and indicate which formats are used and where."
+  },
+  {
+    "objectID": "masterslidedeck.html#text-formatting-all-formats",
+    "href": "masterslidedeck.html#text-formatting-all-formats",
+    "title": "SMSN Quarto workshop",
+    "section": "Text formatting (all formats)",
+    "text": "Text formatting (all formats)\nQuarto supports lots of different ways to format text:\n\n\n\n\n\n\n\n\nstyle\nsyntax\nexample\n\n\n\n\nbold\n**text**\na bold move\n\n\nitalics\n*text*\nthe Italic Version\n\n\nboth\n***text***\na bold Italic move\n\n\nstrikethrough\n~~text~~\nstruck out\n\n\nsuper/subscript\nte^xt^, te~xt~\nsuperscript, subscript\n\n\nunderline\n[text]{.underline}\nI hate underlining.\n\n\nsmall caps\n[text]{.smallcaps}\nI also hate smallcaps.\n\n\nhighlighted\n[text]{.mark}\nI don’t mind highlighting."
+  },
+  {
+    "objectID": "masterslidedeck.html#headings-html-pdf-word",
+    "href": "masterslidedeck.html#headings-html-pdf-word",
+    "title": "SMSN Quarto workshop",
+    "section": "Headings (html, pdf, word)",
+    "text": "Headings (html, pdf, word)\nThere are six levels of headings in Quarto, and you can reach any of these by using an appropriate amount of # keys before the heading title.\n# Chapter style heading\n## Section style heading\n### Subsection style heading\nand so on.\n\n\n\n\n\n\nTip\n\n\nTo make an unnumbered section (pdf, word), add {-} or {.nonumber} after the heading title.\n\n\n\n\n\n\n\n\n\nNote\n\n\nHeadings work differently in revealjs or other presentation formats; see Part 3 for more."
+  },
+  {
+    "objectID": "masterslidedeck.html#hyperlinks-all",
+    "href": "masterslidedeck.html#hyperlinks-all",
+    "title": "SMSN Quarto workshop",
+    "section": "Hyperlinks (all)",
+    "text": "Hyperlinks (all)\nYou can hyperlink to other pages in your website project:\n\nlink to page: [slides template](slidestemplate.qmd) gives slides template\n\nThere are two ways to include hyperlinks to external sites:\n\nplain: &lt;https://github.com/&gt; gives https://github.com/.\nregular: [click here find more on hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images) gives click here to go to GitHub.\n\n\n\n\n\n\n\nTip\n\n\nYou can use standard file path syntax to hyperlink things in different folders. For example [link](./1/2.qmd) links to the file 2.qmd in the subfolder 1, and [link](../3.qmd) links to the file 3.qmd in the parent folder of the qmd file you are working on."
+  },
+  {
+    "objectID": "masterslidedeck.html#sec-lists",
+    "href": "masterslidedeck.html#sec-lists",
+    "title": "SMSN Quarto workshop",
+    "section": "Lists (all, 1/2)",
+    "text": "Lists (all, 1/2)\n\n\nIn this example of a list, the dash - is used, but you can also use + or *. (Note: other mathematical operators are as yet untested.)\nThe spacing here between sublists is important and come in multiples of 2 for unordered lists and 4 for ordered lists.\nNotice the brackets in the ordered lists - they do nothing.\n\n \n\n- first unordered\n- second unordered\n  - first subitem\n    - first subsubitem\n  - second subitem\n- third item \n     \n1. ordered item\n    a) ordered subitem\n    b) ordered subitem\n        i. subsubitem\n2. second ordered item\n\n\n\nfirst unordered\nsecond unordered\n\nfirst subitem\n\nfirst subsubitem\n\nsecond subitem\n\nthird item\n\n\n\n\nordered item\n\nordered subitem\nordered subitem\n\nsubsubitem\n\n\nsecond ordered item"
+  },
+  {
+    "objectID": "masterslidedeck.html#lists-all-22",
+    "href": "masterslidedeck.html#lists-all-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Lists (all, 2/2)",
+    "text": "Lists (all, 2/2)\n\n\nQuarto is slightly fiddly when it comes to list continuations. See across.\nAny list in Quarto requires an entire blank line before the list starts.\nClick here to find more on lists.\n\n \n\n- first unordered \n\n    continue\n    \n- second unordered\n         \n(@) List item 1!\n\nToo enthusiastic. \n\n(@) List item 2.\n\n\n\nfirst unordered item\ncontinue\nsecond unordered item\n\n\n \n\n\nList item 1!\n\nToo enthusiastic.\n\nList item 2."
+  },
+  {
+    "objectID": "masterslidedeck.html#tables",
+    "href": "masterslidedeck.html#tables",
+    "title": "SMSN Quarto workshop",
+    "section": "Tables",
+    "text": "Tables\n| Right | Left    | Default  | Center      |\n|------:|:--------|----------|:-----------:|\n| Tom   | takes   | great    |  happiness  |\n| in    | writing | Markdown |  tables     |\n\n: Tom's table time {tbl-colwidths=\"[20,25,25,30]\"}\n \n\nTom’s table time\n\n\n\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\nTom\ntakes\ngreat\nhappiness\n\n\nin\nwriting\nMarkdown\ntables\n\n\n\n \nQuarto can also import tables from csv files and parse html table syntax. For more on this and tables in general, click here."
+  },
+  {
+    "objectID": "masterslidedeck.html#images-and-figures-all-12",
+    "href": "masterslidedeck.html#images-and-figures-all-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Images and figures (all, 1/2)",
+    "text": "Images and figures (all, 1/2)\n\n\n!['Assistance' in writing this course was provided by Mimi (pictured).](./figures/mimi.png){width=\"75%\" fig-alt=\"A picture of a beautiful tabby cat sitting in front of a laptop on a carpet, with sunlight streaming in through bay windows.\" fig-align=\"left\"}\nThe syntax here implies that captioning is mandatory for images; you can leave it blank if needed. What you should definitely have is alt-text, which is provided by the fig-alt; it appears in the html output for access by screen readers.\n\n \n\n\n\n\n‘Assistance’ in writing this course was provided by Mimi (pictured)."
+  },
+  {
+    "objectID": "masterslidedeck.html#images-and-figures-all-22",
+    "href": "masterslidedeck.html#images-and-figures-all-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Images and figures (all, 2/2)",
+    "text": "Images and figures (all, 2/2)\n\n\n![Mimi in calmer times.](./figures/mimiagain.png){width=\"75%\" fig-alt=\"A picture of the same beautiful tabby cat, sitting in front of a window.\" fig-align=\"right\" #fig-mimiagain}\nNothing else here to say, just wanted to show more pictures of cats.\nActually, that’s a lie; I’ve identified this as a figure for cross-referencing purposes later in the talk.\nOh, and click here if you want to learn more about figures.\n\n \n\n\n\n\n\n\n\nFigure 1: Mimi in calmer times."
+  },
+  {
+    "objectID": "masterslidedeck.html#videos-html-for-sure-definitely-not-pdf-word",
+    "href": "masterslidedeck.html#videos-html-for-sure-definitely-not-pdf-word",
+    "title": "SMSN Quarto workshop",
+    "section": "Videos (html for sure, definitely not pdf, word??)",
+    "text": "Videos (html for sure, definitely not pdf, word??)\n\n\nHere’s how to video.\n(two open braces)&lt; video ./figures/mimivideo.mp4 width=\"270\" height=\"480\" title=\"Mimi is petted.\"&gt;(two close braces)\nThis is a video included as a local file, but you can use YouTube links as well to embed videos in your document.\nOh, and click here if you want to learn more about videos."
+  },
+  {
+    "objectID": "masterslidedeck.html#maths-all",
+    "href": "masterslidedeck.html#maths-all",
+    "title": "SMSN Quarto workshop",
+    "section": "Maths (all)",
+    "text": "Maths (all)\nAll maths syntax is provided by LaTeX commands, with accessibility support provided by MathJax.\nInline maths is represented by single dollars: for instance $\\{n &gt; 0\\; : \\; n\\in\\mathbb{N}$ provides \\(\\{n &gt; 0\\; : \\; n\\in\\mathbb{Z}\\}\\).\nDisplay maths is represented by double dollars: for instance\n$$(x+y)^n = \\sum_{k=0}^n\\binom{n}{k}x^{n-k}y^k.$$\ngives \\[(x+y)^n = \\sum_{k=0}^n\\binom{n}{k}x^{n-k}y^k.\\]\n\n\n\n\n\n\nTip\n\n\nOutput of maths in MS Word is given by their native editor. It does not really recognise custom commands, but these can be used in other formats.\nTo produce an array of equations outputtable in all formats, use $$\\begin{aligned}...\\end{aligned}$$ and treat this as an eqnarray environment."
+  },
+  {
+    "objectID": "masterslidedeck.html#code-blocks-html",
+    "href": "masterslidedeck.html#code-blocks-html",
+    "title": "SMSN Quarto workshop",
+    "section": "Code blocks (html)",
+    "text": "Code blocks (html)\nYou can display blocks of code, using the following syntax:\n(three ticks){.python}\nimport math\ndef binomial_coefficient(n, k):\n    return math.comb(n, k)\nbinomial_coefficient(10,6)\n(three ticks)\nto get\nimport math\ndef binomial_coefficient(n, k):\n    return math.comb(n, k)\nbinomial_coefficient(10,6)\nPandoc supports highlighting for 140 languages. For more about code blocks, particularly in html, you can see this link here."
+  },
+  {
+    "objectID": "masterslidedeck.html#code-chunks-html",
+    "href": "masterslidedeck.html#code-chunks-html",
+    "title": "SMSN Quarto workshop",
+    "section": "Code chunks (html)",
+    "text": "Code chunks (html)\nYou can include snippets of code to be run by Quarto as it builds your document, using the following syntax:\n\n\n(three ticks){r}\n#| echo: true\nbinom_coeff &lt;- function(n, k) {\n  if (k &lt; 0 || k &gt; n) return(0)\n  choose(n, k)\n}\nbinom_coeff(10, 6)\n(three ticks)\n\nto get\n\n\nbinom_coeff &lt;- function(n, k) {\n  if (k &lt; 0 || k &gt; n) return(0)\n  choose(n, k)\n}\nbinom_coeff(10, 6)\n\n[1] 210\n\n\n\n \nwhich is what you’d expect as \\(\\displaystyle \\binom{10}{6}\\) is 210.\n\n\n\n\n\n\nTip\n\n\nAdd options to executable code chunks by #| option: value directly below the three ticks and {r} For instance, you can stop Quarto from displaying the code above by amending to #| echo: false."
+  },
+  {
+    "objectID": "masterslidedeck.html#embedding-stuff-all-depending",
+    "href": "masterslidedeck.html#embedding-stuff-all-depending",
+    "title": "SMSN Quarto workshop",
+    "section": "Embedding stuff (all, depending)",
+    "text": "Embedding stuff (all, depending)\n\n\nYou can embed raw content into your Quarto file. For instance:\n(three ticks){=html}\nembeddable content\n(three ticks)\nIn addition, you can embed output content from another Quarto workbook (such as a Jupyter notebook) into a html file for ease of use. Please click this link to find more."
+  },
+  {
+    "objectID": "masterslidedeck.html#cross-references-all",
+    "href": "masterslidedeck.html#cross-references-all",
+    "title": "SMSN Quarto workshop",
+    "section": "Cross-references (all)",
+    "text": "Cross-references (all)\nInternal cross-references can be put into figures, tables, section headings.\nTo do this, you need a label and a reference somewhere in the text.\nLabels always have the following form #identifier-string where ‘identifier’ is a preset identifier prefix and ‘string’ is a string of text. Identifier prefixes include fig (figure), tbl (table), eq (equation), sec (section), lst (code block);\nTo reference a label in the text, write @identifier-string. This creates a reference, like Figure 1. Click this link to find out more about cross-referencing."
+  },
+  {
+    "objectID": "masterslidedeck.html#callout-blocks-most",
+    "href": "masterslidedeck.html#callout-blocks-most",
+    "title": "SMSN Quarto workshop",
+    "section": "Callout blocks (most)",
+    "text": "Callout blocks (most)\nHere’s a callout block; divs that draw attention to things.\n:::{.callout-note}\nThere are five types of callout block; note (identifier prefix `not`), warning (identifier prefix `war`), important (identifier prefix `imp`), caution (identifier prefix `cau`), tip (identifier prefix `tip`). Replace 'note' in `callout-note` above to get your desired box.\n:::\n\n\n\n\n\n\nNote\n\n\nThere are five types of callout block; note (identifier prefix not), warning (identifier prefix war), important (identifier prefix imp), caution (identifier prefix cau), tip (identifier prefix tip). Replace ‘note’ in callout-note above to get your desired box.\n\n\n\nCallout boxes also exist for mathematical environments, but these do not count sequentially. (See Part 4.)\nClick here to find out about callout boxes."
+  },
+  {
+    "objectID": "masterslidedeck.html#conditional-content-all",
+    "href": "masterslidedeck.html#conditional-content-all",
+    "title": "SMSN Quarto workshop",
+    "section": "Conditional content (all)",
+    "text": "Conditional content (all)\nYou might want to have an interactive html version of a document coupled to a printable pdf version, where interactivity between the two could display very differently. You could use conditional content to facilitate this.\n::: {.content-visible when-format=\"html\"}\n\nWill only appear in html.\n\n:::\nYou can change visible to hidden, and when to unless, and html to genericoutput to fully facilitate all possible options."
+  },
+  {
+    "objectID": "masterslidedeck.html#formatting",
+    "href": "masterslidedeck.html#formatting",
+    "title": "SMSN Quarto workshop",
+    "section": "Formatting",
+    "text": "Formatting\nTo create a presentation file, here’s what to do:\n\nOpen up index.qmd and duplicate this file in the same directory. Give it a snappy name like (myfirstpresentation.qmd).\nChange the title, author to appropriate things.\nNext, change format: html to format: revealjs\nDelete everything under the bottom three dashes ---.\nClick render, or build in whatever way seems comfortable.\nThe html should appear in your browser, and it should be a title slide."
+  },
+  {
+    "objectID": "masterslidedeck.html#why-revealjs",
+    "href": "masterslidedeck.html#why-revealjs",
+    "title": "SMSN Quarto workshop",
+    "section": "Why revealjs?",
+    "text": "Why revealjs?\n\nThis is a native html presentation, which means it is accessible as standard.\nTranslate all of your beautiful Quarto code to presentation format, including use of LaTeX maths, R/Python code blocks and chunks, embeddable videos etc.\nIn fact, almost all of the content in Part 2 can be applied here as well.\nThe html scales to the size of your browser window, making it excellent for use on all sizes of screen.\nNot proprietary. Not made by Microsoft. Free to use and share!"
+  },
+  {
+    "objectID": "masterslidedeck.html#adding-slides-to-the-document",
+    "href": "masterslidedeck.html#adding-slides-to-the-document",
+    "title": "SMSN Quarto workshop",
+    "section": "Adding slides to the document",
+    "text": "Adding slides to the document\nTo add slides to the document, you use headings. Two hashes ## give you a new slide. One hash # gives you a way to split slides into bits. Further hashes ### give slide subtitles. A triple dash --- creates a slide without a title.\n## Initial slide\n\nslide content\n\n# This is a whole title slide used to demark parts of a presentation\n\n## Next slide\n\n### Subtitle\n\n#### Extra subtitle\n\nmore slide content\n\n---\n\nno title on slide"
+  },
+  {
+    "objectID": "masterslidedeck.html#making-slides-fit",
+    "href": "masterslidedeck.html#making-slides-fit",
+    "title": "SMSN Quarto workshop",
+    "section": "Making slides fit",
+    "text": "Making slides fit\nSometimes, your content won’t fit on the slides. There are two ways to deal with this. One, you can make your text smaller; two, you can make the slide scrollable.\nTo do this, add .{.smaller} or {.scrollable} directly after the slide title:\n## Tiny text slide {.smaller}\n\nthis text is smaller\n\n## Scrollable slide {.scrollable}\n\n[text omitted]\n\n\n\n\n\n\nTip\n\n\nYou can also apply these settings at document level, by replacing format: revealjs in the YAML header with:\nformat:\n  revealjs:\n    scrollable: true\n    center-title-slide: false"
+  },
+  {
+    "objectID": "masterslidedeck.html#columns",
+    "href": "masterslidedeck.html#columns",
+    "title": "SMSN Quarto workshop",
+    "section": "Columns",
+    "text": "Columns\nTo split slides into columns, you can do the following with nested divs:\n::::{.columns}\n\n:::{.column width=\"45%\"}\n\ncontent on left\n\n:::\n\n:::{.column width=\"50%\"}\n\ncontent on right\n\n:::\n\n::::\n\n\ncontent on left\n\ncontent on right\n\n\n\n\n\n\n\nTip\n\n\nIf spacing is an issue, consider adding the following column to the middle:\n::: {.column width=\"5%\"}\n \n:::\nThe character   (obtained by (option)+Space on a Mac) is a non-breaking space."
+  },
+  {
+    "objectID": "masterslidedeck.html#presenting-pauses-and-increments-12",
+    "href": "masterslidedeck.html#presenting-pauses-and-increments-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Presenting: pauses and increments (1/2)",
+    "text": "Presenting: pauses and increments (1/2)\nTo pause between two blocks of text, use . . . between paragraphs\n\nlike this.\n\n\nYou can reveal lists incrementally by the following.\n:::{.incremental}\n1. This appears first.\n2. Then, this appears.\n3. A surprise.\n:::\n\nThis appears first.\nThen, this appears.\nBoo!\n\n\n\nYou can add a logo and footer text to your slides by using options logo: filepathtologo.png and footer: footer text in the YAML header."
+  },
+  {
+    "objectID": "masterslidedeck.html#presenting-asides-footnotes-speaker-notes-22",
+    "href": "masterslidedeck.html#presenting-asides-footnotes-speaker-notes-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Presenting: asides, footnotes, speaker notes (2/2)",
+    "text": "Presenting: asides, footnotes, speaker notes (2/2)\nHere’s how to put a footnote in1: text^[footnote text]. And here’s how to do an aside:\n:::{.aside}\nFootnotes and asides also work in standard html documents.\n:::\n\nYou can add speaker notes to your presentation by adding the following div to the very bottom of a slide:\n:::{.notes}\nTell everyone they look nice today. Don't forget to hydrate!\n:::\nTo access speaker notes, press S when the revealjs file is open in your browser.\n\nTell everyone they look nice today. Don’t forget to hydrate!\n\n\nFootnotes and asides also work in standard html documents.\nSee?"
+  },
+  {
+    "objectID": "masterslidedeck.html#themes",
+    "href": "masterslidedeck.html#themes",
+    "title": "SMSN Quarto workshop",
+    "section": "Themes",
+    "text": "Themes\nThere are 12 different ‘bootstrap’ themes available for use. These are:\n\n\n\nbeige\nblood\ndark\ndefault\ndracula\nleague\n\n\n\nmoon\nnight\nserif\nsimple\nsky\nsolarized\n\n\nYou can change these in the YAML header. You can also modify your slide backgrounds slide by slide as well; click this sentence to find out more.\nAlternatively, you can modify a CSS document as I have done, but:\n\n\n\n\n\n\nWarning\n\n\nCSS files are a black hole for your time."
+  },
+  {
+    "objectID": "masterslidedeck.html#the-quarto-book-project-class",
+    "href": "masterslidedeck.html#the-quarto-book-project-class",
+    "title": "SMSN Quarto workshop",
+    "section": "The Quarto book project class",
+    "text": "The Quarto book project class\nIf, like me, you have cause to regularly output long-form mathematical writing to different outputs (html and pdf), then the book project class may be more appropriate for you.\nThe book project class is a special kind of website that bestow numbers on chapters, allowing you to cross-reference between chapters. And…er…that’s it.\nIf you are a LaTeX user, you can think of this as the difference between document classes article and report.\nThis section outlines some more advanced Quarto writing techniques in the book document class."
+  },
+  {
+    "objectID": "masterslidedeck.html#why-proper-counting-12",
+    "href": "masterslidedeck.html#why-proper-counting-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Why: proper counting (1/2)",
+    "text": "Why: proper counting (1/2)\nPart of the appeal of the book project class for me is the ability to count theorem environments sequentially overall, rather than by environment. So instead of having\nDefinition 1.1\nTheorem 1.1\nProof\nCorollary 1.1\nDefinition 1.2\nyou will have\nDefinition 1.1\nTheorem 1.2\nProof\nCorollary 1.3\nDefinition 1.4\n(objectively better). This is achieved through the use of a Quarto extension, a piece of code that extends Quarto’s capabilities to more specialised uses (if that is possible…)"
+  },
+  {
+    "objectID": "masterslidedeck.html#why-custom-maths-commands-22",
+    "href": "masterslidedeck.html#why-custom-maths-commands-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Why: custom maths commands (2/2)",
+    "text": "Why: custom maths commands (2/2)\nThe other thing that works well in the book project class is the idea of custom commands for typesetting mathematics. While you can do this locally in Quarto on every html page, this can be a little bit of a faff. By using conditional content (see Part 2), you’re able to put your custom commands into only two files and include them."
+  },
+  {
+    "objectID": "masterslidedeck.html#the-inputs",
+    "href": "masterslidedeck.html#the-inputs",
+    "title": "SMSN Quarto workshop",
+    "section": "The inputs",
+    "text": "The inputs\nAll chapters are included as separate .qmd files. These will only be built with a quarto::quarto_render() command if you tell it to. For this reason, the _quarto.yml file is super important. Here’s an excerpt from the _quarto.yml class in the book template:\n\n\n_quarto.yml\n\nbook:\n  title: \"Quarto book template\"\n  author: \"Tom Coleman\"\n  chapters:\n    - index.qmd\n    part: \"Content\"\n    - chapter1.qmd\n    - chapter2.qmd\n    part: \"Exercises\"\n    - questions.qmd\n    - solutions.qmd\n    part: \"Appendices\"\n    - deflist.qmd\n  # downloads:\n  #   - pdf\n\nThis is a list of everything you want built by quarto::quarto_render()."
+  },
+  {
+    "objectID": "masterslidedeck.html#pdf-output",
+    "href": "masterslidedeck.html#pdf-output",
+    "title": "SMSN Quarto workshop",
+    "section": "pdf output",
+    "text": "pdf output\nYou may notice that there were two lines that were commented out of the previous code block.\nThese govern pdf output, and by opening up the .yml file (in QuartoBookTemplate) and uncommenting all of the commented lines in there, you can create a simultaneous pdf output for your document.\n\n\n\n\n\n\nWarning\n\n\nYou may be prompted to install more packages to do this; please do so if you want a pdf output.\n\n\n\nThere are some options there to play with as well :)"
+  },
+  {
+    "objectID": "masterslidedeck.html#what-else",
+    "href": "masterslidedeck.html#what-else",
+    "title": "SMSN Quarto workshop",
+    "section": "What else?",
+    "text": "What else?\n\nYou can customise your section depth using number-depth: number as a format option; this will give you control of numbering sections (depth 1), sections and subsections (depth 2) and so on.\nYou are able to create a bibliography by including a {.refs} div at the bottom of the document.\nYou are able to create an index in a pdf output by using the makeidx TeX engine.\n\nPlease click this link for more about book structure."
+  },
+  {
+    "objectID": "masterslidedeck.html#maths-environments-in-the-book-template-13",
+    "href": "masterslidedeck.html#maths-environments-in-the-book-template-13",
+    "title": "SMSN Quarto workshop",
+    "section": "Maths environments in the book template (1/3)",
+    "text": "Maths environments in the book template (1/3)\nThere is a folder called _extensions in the QuartoBookTemplate repo which contains the extension called custom-numbered-blocks. To tell a .yml file to use a particular extension, you need to call it as a filter:\n\n\n_quarto.yml\n\nproject:\n  type: book\n  \nfilters:\n  - custom-numbered-blocks\n\nThen, there are options further down the .yml file which has configured this extension to handle all sorts of different maths environments. These are:\nTheorem, Corollary, Proposition, Lemma, Algorithm, Question, Observation, Conjecture, Definition, Remark, Aside, Example, Feature, Proof, Solution, Claim, Notation, Convention\nand you can add more if needed!"
+  },
+  {
+    "objectID": "masterslidedeck.html#maths-environments-in-the-book-template-23",
+    "href": "masterslidedeck.html#maths-environments-in-the-book-template-23",
+    "title": "SMSN Quarto workshop",
+    "section": "Maths environments in the book template (2/3)",
+    "text": "Maths environments in the book template (2/3)\nHere’s an example, with output given in Figure 2.\n:::{.Theorem #theoremrationals}\n\n## The rationals are the coolest field\n\nLet $(M,&lt;)$ be a partially ordered set, where $&lt;$ represents 'coolness of fields'. Then $\\mathbb{Q}$ is a maximal element in $M$.\n\n:::\n\n:::{.Proof .unnumbered}\n\n## of Theorem \\ref{theoremrationals}\n\nLeft as an exercise to the reader (see \\ref{Q1}); use @eq-rationals.\n\n:::"
+  },
+  {
+    "objectID": "masterslidedeck.html#maths-environments-in-the-book-template-33",
+    "href": "masterslidedeck.html#maths-environments-in-the-book-template-33",
+    "title": "SMSN Quarto workshop",
+    "section": "Maths environments in the book template (3/3)",
+    "text": "Maths environments in the book template (3/3)\n:::{.Theorem #theoremrationals}\n## The rationals are the coolest field\n[theorem text]\n:::\n:::{.Proof .unnumbered}\n## of Theorem \\ref{theoremrationals}\nLeft as an exercise to the reader (see \\ref{Q1}); use @eq-rationals.\n:::\n\nThe # term in the braces is a reference label; unlike the inbuilt Quarto referencing system, references to these environments are called with \\ref{theoremrationals}. All other references are done with @eq-thing as Quarto standard.\nThe ## term inside the div gives the theorem a title.\nAll environments are numbered by default; to unnumber them, include an .unnumbered in the braces.\nTheorems and definitions are added to a listing .qmd that you can include in the appendices."
+  },
+  {
+    "objectID": "masterslidedeck.html#custom-commands",
+    "href": "masterslidedeck.html#custom-commands",
+    "title": "SMSN Quarto workshop",
+    "section": "Custom commands",
+    "text": "Custom commands\nTo make sure custom commands are usable, you can put all of your macros in both the _preamble.qmd file and (if using pdf output) the preamble.tex. The way that this works on every page is the inclusion of the following on line 1 of each qmd file:\n(two open braces)&lt; include _preamble.qmd &gt;(two closed braces)\nThis will then put all of your macros in both the html and pdf output. In addition, you can customise your LaTeX output by adding as many packages as you want."
+  },
+  {
+    "objectID": "masterslidedeck.html#let-me-know-what-you-think",
+    "href": "masterslidedeck.html#let-me-know-what-you-think",
+    "title": "SMSN Quarto workshop",
+    "section": "Let me know what you think",
+    "text": "Let me know what you think\n\n\nI would be very grateful if you took the time to fill in a Google form about today’s workshop, in order to improve the workshop for potential future runnings and to help me understand the impact of today’s workshop. All submissions are entirely anonymous.\n\n \n\n\n\n\nYou can find the form at this QR code or at this link: https://forms.gle/UeS478kobWTYbWDi9\n\n\n\nAny other questions, comments, thoughts, please let me know at tdhc (at) st (dash) andrews (dot) ac (dot) uk.\nThank you so much for coming, and Happy Quartoing! (Quarting? Quartoisation?)"
+  },
+  {
+    "objectID": "slidestemplate.html#initial-slide",
+    "href": "slidestemplate.html#initial-slide",
+    "title": "SMSN Quarto workshop",
+    "section": "Initial slide",
+    "text": "Initial slide\nslide content"
+  },
+  {
+    "objectID": "slidestemplate.html#next-slide",
+    "href": "slidestemplate.html#next-slide",
+    "title": "SMSN Quarto workshop",
+    "section": "Next slide",
+    "text": "Next slide\nSubtitle\nExtra subtitle\nmore slide content"
+  },
+  {
+    "objectID": "slidestemplate.html#tiny-text-slide",
+    "href": "slidestemplate.html#tiny-text-slide",
+    "title": "SMSN Quarto workshop",
+    "section": "Tiny text slide",
+    "text": "Tiny text slide\nthis text is smaller"
+  },
+  {
+    "objectID": "slidestemplate.html#scrollable-slide",
+    "href": "slidestemplate.html#scrollable-slide",
+    "title": "SMSN Quarto workshop",
+    "section": "Scrollable slide",
+    "text": "Scrollable slide\n[text omitted]"
+  },
+  {
+    "objectID": "slidestemplate.html#columns",
+    "href": "slidestemplate.html#columns",
+    "title": "SMSN Quarto workshop",
+    "section": "Columns",
+    "text": "Columns\n\n\ncontent on left\n\ncontent on right\n\n\n\n\n\n\n\nTip\n\n\nIf spacing is an issue, consider adding the following column to the middle:\n::: {.column width=\"5%\"}\n \n:::\nThe character   (obtained by (option)+Space on a Mac) is a non-breaking space."
+  },
+  {
+    "objectID": "slidestemplate.html#presenting-pauses-and-increments-12",
+    "href": "slidestemplate.html#presenting-pauses-and-increments-12",
+    "title": "SMSN Quarto workshop",
+    "section": "Presenting: pauses and increments (1/2)",
+    "text": "Presenting: pauses and increments (1/2)\nTo pause between two blocks of text, use . . . between paragraphs\n\nlike this.\n\n\nYou can reveal lists incrementally by the following.\n:::{.incremental}\n1. This appears first.\n2. Then, this appears.\n3. A surprise.\n:::\n\nThis appears first.\nThen, this appears.\nBoo!\n\n\n\nYou can add a logo and footer text to your slides by using options logo: filepathtologo.png and footer: footer text in the YAML header."
+  },
+  {
+    "objectID": "slidestemplate.html#presenting-asides-footnotes-speaker-notes-22",
+    "href": "slidestemplate.html#presenting-asides-footnotes-speaker-notes-22",
+    "title": "SMSN Quarto workshop",
+    "section": "Presenting: asides, footnotes, speaker notes (2/2)",
+    "text": "Presenting: asides, footnotes, speaker notes (2/2)\nHere’s how to put a footnote in1: text^[footnote text]. And here’s how to do an aside:\n:::{.aside}\nFootnotes and asides also work in standard html documents.\n:::\n\nYou can add speaker notes to your presentation by adding the following div to the very bottom of a slide:\n:::{.notes}\nTell everyone they look nice today. Don't forget to hydrate!\n:::\nTo access speaker notes, press S when the revealjs file is open in your browser.\n\nTell everyone they look nice today. Don’t forget to hydrate!\n\n\nFootnotes and asides also work in standard html documents.\nSee?"
+  },
+  {
+    "objectID": "slidestemplate.html#themes",
+    "href": "slidestemplate.html#themes",
+    "title": "SMSN Quarto workshop",
+    "section": "Themes",
+    "text": "Themes\nThere are 12 different ‘bootstrap’ themes available for use. These are:\n\n\n\nbeige\nblood\ndark\ndefault\ndracula\nleague\n\n\n\nmoon\nnight\nserif\nsimple\nsky\nsolarized\n\n\nYou can change these in the YAML header. You can also modify your slide backgrounds slide by slide as well; click this sentence to find out more.\nAlternatively, you can modify a CSS document as I have done, but:\n\n\n\n\n\n\nWarning\n\n\nCSS files are a black hole for your time."
+  },
+  {
+    "objectID": "resourcetemplate.html",
+    "href": "resourcetemplate.html",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "",
+    "text": "Quarto supports lots of different ways to format text:\n\n\n\n\n\n\n\n\nstyle\nsyntax\nexample\n\n\n\n\nbold\n**text**\na bold move\n\n\nitalics\n*text*\nthe Italic Version\n\n\nboth\n***text***\na bold Italic move\n\n\nstrikethrough\n~~text~~\nstruck out\n\n\nsuper/subscript\nte^xt^, te~xt~\nsuperscript, subscript\n\n\nunderline\n[text]{.underline}\nI hate underlining.\n\n\nsmall caps\n[text]{.smallcaps}\nI also hate smallcaps.\n\n\nhighlighted\n[text]{.mark}\nI don’t mind highlighting."
+  },
+  {
+    "objectID": "resourcetemplate.html#text-formatting",
+    "href": "resourcetemplate.html#text-formatting",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "",
+    "text": "Quarto supports lots of different ways to format text:\n\n\n\n\n\n\n\n\nstyle\nsyntax\nexample\n\n\n\n\nbold\n**text**\na bold move\n\n\nitalics\n*text*\nthe Italic Version\n\n\nboth\n***text***\na bold Italic move\n\n\nstrikethrough\n~~text~~\nstruck out\n\n\nsuper/subscript\nte^xt^, te~xt~\nsuperscript, subscript\n\n\nunderline\n[text]{.underline}\nI hate underlining.\n\n\nsmall caps\n[text]{.smallcaps}\nI also hate smallcaps.\n\n\nhighlighted\n[text]{.mark}\nI don’t mind highlighting."
+  },
+  {
+    "objectID": "resourcetemplate.html#headings",
+    "href": "resourcetemplate.html#headings",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Headings",
+    "text": "Headings\nThere are six levels of headings in Quarto, and you can reach any of these by using an appropriate amount of # keys before the heading title.\n# Chapter style heading\n## Section style heading\n### Subsection style heading\nand so on.\n\n\n\n\n\n\nTip\n\n\n\nTo make an unnumbered section (pdf, word), add {-} or {.nonumber} after the heading title.\n\n\n\n\n\n\n\n\nNote\n\n\n\nHeadings work differently in revealjs or other presentation formats; see Part 3 for more."
+  },
+  {
+    "objectID": "resourcetemplate.html#hyperlinks",
+    "href": "resourcetemplate.html#hyperlinks",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Hyperlinks",
+    "text": "Hyperlinks\nYou can hyperlink to other pages in your website project:\n\nlink to page: [slides template](slidestemplate.qmd) gives slides template\n\nThere are two ways to include hyperlinks to external sites:\n\nplain: &lt;https://github.com/&gt; gives https://github.com/.\nregular: [click here find more on hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images) gives click here to go to GitHub.\n\n\n\n\n\n\n\nTip\n\n\n\nYou can use standard file path syntax to hyperlink things in different folders. For example [link](./1/2.qmd) links to the file 2.qmd in the subfolder 1, and [link](../3.qmd) links to the file 3.qmd in the parent folder of the qmd file you are working on."
+  },
+  {
+    "objectID": "resourcetemplate.html#lists",
+    "href": "resourcetemplate.html#lists",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Lists",
+    "text": "Lists\nIn this example of a list, the dash - is used, but you can also use + or *. (Note: other mathematical operators are as yet untested.)\nThe spacing here between sublists is important and come in multiples of 2 for unordered lists and 4 for ordered lists.\nNotice the brackets in the ordered lists - they do nothing.\n- first unordered item\n- second unordered item\n  - first subitem\n    - first subsubitem\n  - second subitem\n- third item \n\nfirst unordered item\nsecond unordered item\n\nfirst subitem\n\nfirst subsubitem\n\nsecond subitem\n\nthird item\n\n1. ordered item\n    a) ordered subitem\n    b) ordered subitem\n        i. subsubitem\n2. second ordered item\n\nordered item\n\nordered subitem\nordered subitem\n\nsubsubitem\n\n\nsecond ordered item\n\nQuarto is slightly fiddly when it comes to list continuations.\nAny list in Quarto requires an entire blank line before the list starts.\nClick here to find more on lists.\n- first unordered item\n\n    continue with your text here\n    \n- second unordered item\n\nfirst unordered item\ncontinue with your text here\nsecond unordered item\n\n(@) List item 1!\n\nThe list writer is too enthusiastic. \n\n(@) List item 2.\n\n\nList item 1!\n\nThe list writer is too enthusiastic.\n\nList item 2."
+  },
+  {
+    "objectID": "resourcetemplate.html#tables",
+    "href": "resourcetemplate.html#tables",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Tables",
+    "text": "Tables\n| Right | Left    | Default  | Center      |\n|------:|:--------|----------|:-----------:|\n| Tom   | takes   | great    |  happiness  |\n| in    | writing | Markdown |  tables     |\n\n: Tom's table time {tbl-colwidths=\"[20,25,25,30]\"}\n \n\nTom’s table time\n\n\n\n\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\nTom\ntakes\ngreat\nhappiness\n\n\nin\nwriting\nMarkdown\ntables\n\n\n\n \nQuarto can also import tables from csv files and parse html table syntax. For more on this and tables in general, click here."
+  },
+  {
+    "objectID": "resourcetemplate.html#images-and-figures",
+    "href": "resourcetemplate.html#images-and-figures",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Images and figures",
+    "text": "Images and figures\n!['Assistance' in writing this course was provided by Mimi (pictured).](./figures/mimi.png){width=\"75%\" fig-alt=\"A picture of a beautiful tabby cat sitting in front of a laptop on a carpet, with sunlight streaming in through bay windows.\" fig-align=\"left\"}\nThe syntax here implies that captioning is mandatory for images; you can leave it blank if needed. What you should definitely have is alt-text, which is provided by the fig-alt; it appears in the html output for access by screen readers.\n\n\n\n‘Assistance’ in writing this course was provided by Mimi (pictured).\n\n\n![Mimi in calmer times.](./figures/mimiagain.png){width=\"75%\" fig-alt=\"A picture of the same beautiful tabby cat, sitting in front of a window.\" fig-align=\"right\" #fig-mimiagain}\nNothing else here to say, just wanted to show more pictures of cats.\nActually, that’s a lie; I’ve identified this as a figure for cross-referencing purposes later in the talk.\nOh, and click here if you want to learn more about figures.\n\n\n\n\n\n\nFigure 1: Mimi in calmer times."
+  },
+  {
+    "objectID": "resourcetemplate.html#videos",
+    "href": "resourcetemplate.html#videos",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Videos",
+    "text": "Videos\nHere’s how to video.\n{{ &lt; video ./figures/mimivideo.mp4 width=\"270\" height=\"480\" title=\"Mimi is petted.\"&gt; }}\nThis is a video included as a local file, but you can use YouTube links as well to embed videos in your document.\nOh, and click here if you want to learn more about videos."
+  },
+  {
+    "objectID": "resourcetemplate.html#maths",
+    "href": "resourcetemplate.html#maths",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Maths",
+    "text": "Maths\nAll maths syntax is provided by LaTeX commands, with accessibility support provided by MathJax.\nInline maths is represented by single dollars: for instance $\\{n &gt; 0\\; : \\; n\\in\\mathbb{N}$ provides \\(\\{n &gt; 0\\; : \\; n\\in\\mathbb{Z}\\}\\).\nDisplay maths is represented by double dollars: for instance\n$$(x+y)^n = \\sum_{k=0}^n\\binom{n}{k}x^{n-k}y^k.$$\ngives \\[(x+y)^n = \\sum_{k=0}^n\\binom{n}{k}x^{n-k}y^k.\\]\n\n\n\n\n\n\nTip\n\n\n\nOutput of maths in MS Word is given by their native editor. It does not really recognise custom commands, but these can be used in other formats.\nTo produce an array of equations outputtable in all formats, use $$\\begin{aligned}...\\end{aligned}$$ and treat this as an eqnarray environment."
+  },
+  {
+    "objectID": "resourcetemplate.html#code-blocks",
+    "href": "resourcetemplate.html#code-blocks",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Code blocks",
+    "text": "Code blocks\nYou can display blocks of code, using the following syntax:\n(three ticks){.python}\nimport math\ndef binomial_coefficient(n, k):\n    return math.comb(n, k)\nbinomial_coefficient(10,6)\n(three ticks)\nto get\nimport math\ndef binomial_coefficient(n, k):\n    return math.comb(n, k)\nbinomial_coefficient(10,6)\nPandoc supports highlighting for 140 languages. For more about code blocks, particularly in html, you can see this link here."
+  },
+  {
+    "objectID": "resourcetemplate.html#code-chunks",
+    "href": "resourcetemplate.html#code-chunks",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Code chunks",
+    "text": "Code chunks\nYou can include snippets of code to be run by Quarto as it builds your document, using the following syntax:\n(three ticks){r}\n#| echo: true\nbinom_coeff &lt;- function(n, k) {\n  if (k &lt; 0 || k &gt; n) return(0)\n  choose(n, k)\n}\nbinom_coeff(10, 6)\n(three ticks)\nto get\n\nbinom_coeff &lt;- function(n, k) {\n  if (k &lt; 0 || k &gt; n) return(0)\n  choose(n, k)\n}\nbinom_coeff(10, 6)\n\n[1] 210\n\n\nwhich is what you’d expect as \\(\\displaystyle \\binom{10}{6}\\) is 210.\n\n\n\n\n\n\nTip\n\n\n\nAdd options to executable code chunks by #| option: value directly below the three ticks and {r} For instance, you can stop Quarto from displaying the code above by amending to #| echo: false."
+  },
+  {
+    "objectID": "resourcetemplate.html#embedding-stuff",
+    "href": "resourcetemplate.html#embedding-stuff",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Embedding stuff",
+    "text": "Embedding stuff\nYou can embed raw content into your Quarto file. For instance:\n(three ticks){=html}\nembeddable content\n(three ticks)\nIn addition, you can embed output content from another Quarto workbook (such as a Jupyter notebook) into a html file for ease of use. Please click this link to find more."
+  },
+  {
+    "objectID": "resourcetemplate.html#cross-references",
+    "href": "resourcetemplate.html#cross-references",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Cross-references",
+    "text": "Cross-references\nInternal cross-references can be put into figures, tables, section headings.\nTo do this, you need a label and a reference somewhere in the text.\nLabels always have the following form #identifier-string where ‘identifier’ is a preset identifier prefix and ‘string’ is a string of text. Identifier prefixes include fig (figure), tbl (table), eq (equation), sec (section), lst (code block);\nTo reference a label in the text, write @identifier-string. This creates a reference, like Figure 1. Click this link to find out more about cross-referencing."
+  },
+  {
+    "objectID": "resourcetemplate.html#callout-blocks",
+    "href": "resourcetemplate.html#callout-blocks",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Callout blocks",
+    "text": "Callout blocks\nHere’s a callout block; divs that draw attention to things.\n:::{.callout-note}\nThere are five types of callout block; note (identifier prefix `not`), warning (identifier prefix `war`), important (identifier prefix `imp`), caution (identifier prefix `cau`), tip (identifier prefix `tip`). Replace 'note' in `callout-note` above to get your desired box.\n:::\n\n\n\n\n\n\nNote\n\n\n\nThere are five types of callout block; note (identifier prefix not), warning (identifier prefix war), important (identifier prefix imp), caution (identifier prefix cau), tip (identifier prefix tip). Replace ‘note’ in callout-note above to get your desired box.\n\n\nCallout boxes also exist for mathematical environments, but these do not count sequentially. (See Part 4.)\nClick here to find out about callout boxes."
+  },
+  {
+    "objectID": "resourcetemplate.html#conditional-content",
+    "href": "resourcetemplate.html#conditional-content",
+    "title": "SMSN Quarto workshop: resource template",
+    "section": "Conditional content",
+    "text": "Conditional content\nYou might want to have an interactive html version of a document coupled to a printable pdf version, where interactivity between the two could display very differently. You could use conditional content to facilitate this.\n::: {.content-visible when-format=\"html\"}\n\nWill only appear in html.\n\n:::\nYou can change visible to hidden, and when to unless, and html to genericoutput to fully facilitate all possible options."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quarto website template",
+    "section": "",
+    "text": "Quarto resource template\nQuarto slides template\nSlides used in the workshop\nQuarto is a powerful open-source typesetting language. Boasting both R and Python functionality, it can be used to write a huge range of outputs including short-form html documents, interactive Python or R workbooks via Jupyter, dynamic accessible slides, or even traditional lecture notes.\nThis hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover: how to build Quarto documents, writing content in Quarto, working with revealjs slides, and working with longer-form documents such as lecture notes. Templates will be provided for ease of use.\nTo participate in this workshop, you will need to download either RStudio to your computer, or to use Posit Cloud (a free cloud-based service to run RStudio projects) during the session.\nAny problems? Please contact me at tdhc (at) st (dash) andrews (dot) ac (dot) uk."
+  },
+  {
+    "objectID": "index.html#after-the-sessionusing-the-resources",
+    "href": "index.html#after-the-sessionusing-the-resources",
+    "title": "Quarto website template",
+    "section": "After the session/using the resources",
+    "text": "After the session/using the resources\nI would be very grateful if you took the time to fill in a Google form about today’s workshop, in order to improve the workshop for potential future runnings and to help me understand the impact of today’s workshop. All submissions are entirely anonymous.\n\n\n\nYou can find the form at this QR code or at this link: https://forms.gle/UeS478kobWTYbWDi9"
+  }
+]

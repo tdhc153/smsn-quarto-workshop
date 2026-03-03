@@ -1,0 +1,161 @@
+---
+title: "SMSN Quarto workshop"
+subtitle: Slide template
+author: Tom Coleman
+date: 2026-03-04
+format: 
+  revealjs:
+    theme: default
+---
+
+## Initial slide
+
+slide content
+
+# This is a whole title slide used to demark parts of a presentation
+
+## Next slide
+
+### Subtitle
+
+#### Extra subtitle
+
+more slide content
+
+---
+
+no title on slide
+
+## Tiny text slide {.smaller}
+
+this text is smaller
+
+## Scrollable slide {.scrollable}
+
+[text omitted]
+
+
+## Columns 
+
+::::{.columns}
+
+:::{.column width="45%"}
+
+content on left
+
+:::
+
+:::{.column width="50%"}
+
+content on right
+
+:::
+
+::::
+
+:::{.callout-tip}
+If spacing is an issue, consider adding the following column to the middle:
+```{.quarto}
+::: {.column width="5%"}
+ 
+:::
+``` 
+The character ` ` (obtained by (option)+Space on a Mac) is a non-breaking space.
+
+:::
+
+## Presenting: pauses and increments (1/2) {.smaller}
+
+To pause between two blocks of text, use `. . .` between paragraphs
+
+. . . 
+
+like this.
+
+. . .
+
+You can reveal lists incrementally by the following.
+
+```{.quarto}
+:::{.incremental}
+1. This appears first.
+2. Then, this appears.
+3. A surprise.
+:::
+```
+
+:::{.incremental}
+1. This appears first.
+2. Then, this appears.
+3. ***Boo!***
+:::
+
+. . . 
+
+You can add a logo and footer text to your slides by using options `logo: filepathtologo.png` and `footer: footer text` in the YAML header.
+
+## Presenting: asides, footnotes, speaker notes (2/2) {.smaller}
+
+Here's how to put a footnote in^[See?]: `text^[footnote text]`. And here's how to do an aside:
+
+```{.quarto}
+:::{.aside}
+Footnotes and asides also work in standard html documents.
+:::
+```
+
+:::{.aside}
+Footnotes and asides also work in standard html documents.
+:::
+
+You can add speaker notes to your presentation by adding the following div to the very bottom of a slide:
+
+```{.quarto}
+:::{.notes}
+Tell everyone they look nice today. Don't forget to hydrate!
+:::
+```
+
+To access speaker notes, press S when the revealjs file is open in your browser.
+
+:::{.notes}
+Tell everyone they look nice today. Don't forget to hydrate!
+:::
+
+## Themes {.smaller}
+
+There are 12 different 'bootstrap' themes available for use. These are:
+
+::::{.columns}
+
+:::{.column width="50%"}
+
+- `beige`
+- `blood`
+- `dark`
+- `default`
+- `dracula`
+- `league`
+
+:::
+
+:::{.column width="50%"}
+
+- `moon`
+- `night`
+- `serif`
+- `simple`
+- `sky`
+- `solarized`
+
+:::
+
+::::
+
+You can change these in the YAML header. [You can also modify your slide backgrounds slide by slide as well; click this sentence to find out more.](https://quarto.org/docs/presentations/revealjs/#slide-backgrounds)
+
+Alternatively, you can modify a CSS document as I have done, but:
+
+:::{.callout-warning}
+CSS files are a black hole for your time.
+:::
