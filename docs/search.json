@@ -18,7 +18,7 @@
     "href": "masterslidedeck.html#lets-get-started",
     "title": "SMSN Quarto workshop",
     "section": "Let’s get started",
-    "text": "Let’s get started\n\nOpen up your editor of choice.\nDownload the Quarto template from [LINK] either locally (R Studio) or onto your cloud (Posit Cloud)\nIf using R Studio or Posit Cloud, open up the .RProj file, and then open index.qmd inside the project. If not, open up index.qmd.\nClick ‘Render’ above the source code (if using R Studio or Posit Cloud) or render in another way if using another editor.\nThe html should appear on your preferred browser."
+    "text": "Let’s get started\n\nOpen up your editor of choice.\nDownload the Quarto template from GitHub either locally (R Studio) or onto your cloud (Posit Cloud)\nIf using R Studio or Posit Cloud, open up the .RProj file, and then open index.qmd inside the project. If not, open up index.qmd.\nClick ‘Render’ above the source code (if using R Studio or Posit Cloud) or render in another way if using another editor.\nThe html should appear on your preferred browser."
   },
   {
     "objectID": "masterslidedeck.html#creating-your-own-file",

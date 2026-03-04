@@ -31,7 +31,7 @@ You can download the source code from <https://github.com/tdhc153/smsn-quarto-wo
 
 1. Open up your editor of choice. 
 
-2. Download the Quarto template from [LINK] either locally (R Studio) or onto your cloud (Posit Cloud)
+2. Download the Quarto template from [GitHub](https://github.com/tdhc153/smsn-quarto-workshop) either locally (R Studio) or onto your cloud (Posit Cloud)
 
 3. If using R Studio or Posit Cloud, open up the .RProj file, and then open index.qmd inside the project. If not, open up index.qmd.
 
