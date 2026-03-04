@@ -333,7 +333,7 @@
     "href": "masterslidedeck.html#maths-environments-in-the-book-template-23",
     "title": "SMSN Quarto workshop",
     "section": "Maths environments in the book template (2/3)",
-    "text": "Maths environments in the book template (2/3)\nHere’s an example, with output given in Figure 2.\n:::{.Theorem #theoremrationals}\n\n## The rationals are the coolest field\n\nLet $(M,&lt;)$ be a partially ordered set, where $&lt;$ represents 'coolness of fields'. Then $\\mathbb{Q}$ is a maximal element in $M$.\n\n:::\n\n:::{.Proof .unnumbered}\n\n## of Theorem \\ref{theoremrationals}\n\nLeft as an exercise to the reader (see \\ref{Q1}); use @eq-rationals.\n\n:::"
+    "text": "Maths environments in the book template (2/3)\nHere’s an example, with output given in Figure 2.\n:::{.Theorem #theoremrationals}\n\n## The rationals are the coolest field\n\nLet $(M,&lt;)$ be a partially ordered set, where $&lt;$ represents\n'coolness of fields'. Then $\\mathbb{Q}$ is a maximal element \nin $M$.\n\n:::\n\n:::{.Proof .unnumbered}\n\n## of Theorem \\ref{theoremrationals}\n\nLeft as an exercise to the reader (see \\ref{Q1}); use @eq-rationals.\n\n:::"
   },
   {
     "objectID": "masterslidedeck.html#maths-environments-in-the-book-template-33",

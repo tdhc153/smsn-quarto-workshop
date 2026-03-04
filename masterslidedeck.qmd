@@ -466,7 +466,7 @@ The syntax here implies that captioning is mandatory for images; you can leave i
 
 ::::
 
-## Images and figures (all, 2/2)
+## Images and figures (all, 2/2) {.smaller}
 
 ::::{.columns}
 
@@ -676,7 +676,7 @@ To reference a label in the text, write `@identifier-string`. This creates a ref
 
 Here's a callout block; divs that draw attention to things. 
 
-```{.quarto}
+```
 :::{.callout-note}
 There are five types of callout block; note (identifier prefix `not`), warning (identifier prefix `war`), important (identifier prefix `imp`), caution (identifier prefix `cau`), tip (identifier prefix `tip`). Replace 'note' in `callout-note` above to get your desired box.
 :::
@@ -1054,7 +1054,9 @@ Here's an example, with output given in @fig-output.
 
 ## The rationals are the coolest field
 
-Let $(M,<)$ be a partially ordered set, where $<$ represents 'coolness of fields'. Then $\mathbb{Q}$ is a maximal element in $M$.
+Let $(M,<)$ be a partially ordered set, where $<$ represents
+'coolness of fields'. Then $\mathbb{Q}$ is a maximal element 
+in $M$.
 
 :::
 
@@ -1072,7 +1074,7 @@ Left as an exercise to the reader (see \ref{Q1}); use @eq-rationals.
 
 The output looks like this:
 
-![Mimi in calmer times.](./figures/output.png){fig-alt="A picture of the Quarto output of the theorem." fig-align="center" #fig-output}
+![Example of environment outputs in QuartoBookTemplate. Definitions are blue, examples yellow.](./figures/output.png){fig-alt="A picture of the Quarto output of the theorem." fig-align="center" #fig-output}
 
 You can collapse any of these environments.
 
