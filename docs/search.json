@@ -11,7 +11,7 @@
     "href": "masterslidedeck.html#structure-of-the-workshop",
     "title": "SMSN Quarto workshop",
     "section": "Structure of the workshop",
-    "text": "Structure of the workshop\nThis hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover:\n\nhow to build Quarto documents (Part 1)\nwriting content in Quarto (Part 2)\nworking with revealjs slides (Part 3)\nauthoring longer-form documents such as lecture notes (Part 4).\n\nTemplates are provided."
+    "text": "Structure of the workshop\nThis hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover:\n\nhow to build Quarto documents (Part 1)\nwriting content in Quarto (Part 2)\nworking with revealjs slides (Part 3)\nauthoring longer-form documents such as lecture notes (Part 4).\n\nTemplates are provided, and can be found at https://tdhc153.github.io/smsn-quarto-workshop/, along with these slides (which you can read along with/copy code from during the session).\nYou can download the source code from https://github.com/tdhc153/smsn-quarto-workshop."
   },
   {
     "objectID": "masterslidedeck.html#lets-get-started",
@@ -305,7 +305,7 @@
     "href": "masterslidedeck.html#the-inputs",
     "title": "SMSN Quarto workshop",
     "section": "The inputs",
-    "text": "The inputs\nAll chapters are included as separate .qmd files. These will only be built with a quarto::quarto_render() command if you tell it to. For this reason, the _quarto.yml file is super important. Here’s an excerpt from the _quarto.yml class in the book template:\n\n\n_quarto.yml\n\nbook:\n  title: \"Quarto book template\"\n  author: \"Tom Coleman\"\n  chapters:\n    - index.qmd\n    part: \"Content\"\n    - chapter1.qmd\n    - chapter2.qmd\n    part: \"Exercises\"\n    - questions.qmd\n    - solutions.qmd\n    part: \"Appendices\"\n    - deflist.qmd\n  # downloads:\n  #   - pdf\n\nThis is a list of everything you want built by quarto::quarto_render()."
+    "text": "The inputs\nAll chapters are included as separate .qmd files. These will only be built with a quarto::quarto_render() command if you tell it to. For this reason, the _quarto.yml file is super important. Here’s an excerpt from the _quarto.yml class in the book template:\n\n\n_quarto.yml\n\nbook:\n  title: \"Quarto book template\"\n  author: \"Tom Coleman\"\n  chapters:\n    - index.qmd\n    - part: \"Content\"\n      chapters:\n        - chapter1.qmd\n        - chapter2.qmd\n    - part: \"Exercises\"\n      chapters:\n        - questions.qmd\n        - solutions.qmd\n  appendices:\n    - deflist.qmd\n  # downloads:\n  #   - pdf\n\nThis is a list of everything you want built by quarto::quarto_render()."
   },
   {
     "objectID": "masterslidedeck.html#pdf-output",

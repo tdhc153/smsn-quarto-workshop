@@ -213,7 +213,7 @@ Tom Coleman (University of St Andrews)
 <h2>Why Quarto?</h2>
 <p>Quarto is a powerful open-source typesetting language. Including both R and Python functionality, it can be used to write a huge range of outputs including full websites of html pages, interactive Python or R workbooks via Jupyter, dynamic and accessible slides, or even traditional lecture notes.</p>
 </section>
-<section id="structure-of-the-workshop" class="slide level2">
+<section id="structure-of-the-workshop" class="slide level2 smaller">
 <h2>Structure of the workshop</h2>
 <p>This hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover:</p>
 <ul>
@@ -222,7 +222,8 @@ Tom Coleman (University of St Andrews)
 <li>working with revealjs slides (Part 3)</li>
 <li>authoring longer-form documents such as lecture notes (Part 4).</li>
 </ul>
-<p>Templates are provided.</p>
+<p>Templates are provided, and can be found at <a href="https://tdhc153.github.io/smsn-quarto-workshop/" class="uri">https://tdhc153.github.io/smsn-quarto-workshop/</a>, along with these slides (which you can read along with/copy code from during the session).</p>
+<p>You can download the source code from <a href="https://github.com/tdhc153/smsn-quarto-workshop" class="uri">https://github.com/tdhc153/smsn-quarto-workshop</a>.</p>
 </section>
 <section>
 <section id="part-1-lets-build" class="title-slide slide level1 center">
@@ -1123,16 +1124,18 @@ Definition 1.4</code></pre>
 <span id="cb32-3"><a></a>  author: "Tom Coleman"</span>
 <span id="cb32-4"><a></a>  chapters:</span>
 <span id="cb32-5"><a></a>    - index.qmd</span>
-<span id="cb32-6"><a></a>    part: "Content"</span>
-<span id="cb32-7"><a></a>    - chapter1.qmd</span>
-<span id="cb32-8"><a></a>    - chapter2.qmd</span>
-<span id="cb32-9"><a></a>    part: "Exercises"</span>
-<span id="cb32-10"><a></a>    - questions.qmd</span>
-<span id="cb32-11"><a></a>    - solutions.qmd</span>
-<span id="cb32-12"><a></a>    part: "Appendices"</span>
-<span id="cb32-13"><a></a>    - deflist.qmd</span>
-<span id="cb32-14"><a></a>  # downloads:</span>
-<span id="cb32-15"><a></a>  #   - pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb32-6"><a></a>    - part: "Content"</span>
+<span id="cb32-7"><a></a>      chapters:</span>
+<span id="cb32-8"><a></a>        - chapter1.qmd</span>
+<span id="cb32-9"><a></a>        - chapter2.qmd</span>
+<span id="cb32-10"><a></a>    - part: "Exercises"</span>
+<span id="cb32-11"><a></a>      chapters:</span>
+<span id="cb32-12"><a></a>        - questions.qmd</span>
+<span id="cb32-13"><a></a>        - solutions.qmd</span>
+<span id="cb32-14"><a></a>  appendices:</span>
+<span id="cb32-15"><a></a>    - deflist.qmd</span>
+<span id="cb32-16"><a></a>  # downloads:</span>
+<span id="cb32-17"><a></a>  #   - pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This is a list of everything you want built by <code>quarto::quarto_render()</code>.</p>
 </section>

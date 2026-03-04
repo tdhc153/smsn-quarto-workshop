@@ -12,7 +12,7 @@ format:
 
 Quarto is a powerful open-source typesetting language. Including both R and Python functionality, it can be used to write a huge range of outputs including full websites of html pages, interactive Python or R workbooks via Jupyter, dynamic and accessible slides, or even traditional lecture notes.
 
-## Structure of the workshop
+## Structure of the workshop {.smaller}
  
 This hands-on interactive workshop will teach you how to create and build Quarto documents. The workshop will cover: 
 
@@ -21,7 +21,9 @@ This hands-on interactive workshop will teach you how to create and build Quarto
 - working with revealjs slides (Part 3)
 - authoring longer-form documents such as lecture notes (Part 4). 
 
-Templates are provided.
+Templates are provided, and can be found at <https://tdhc153.github.io/smsn-quarto-workshop/>, along with these slides (which you can read along with/copy code from during the session).
+
+You can download the source code from <https://github.com/tdhc153/smsn-quarto-workshop>.
 
 # Part 1: Let's build
 
@@ -986,13 +988,15 @@ book:
   author: "Tom Coleman"
   chapters:
     - index.qmd
-    part: "Content"
-    - chapter1.qmd
-    - chapter2.qmd
-    part: "Exercises"
-    - questions.qmd
-    - solutions.qmd
-    part: "Appendices"
+    - part: "Content"
+      chapters:
+        - chapter1.qmd
+        - chapter2.qmd
+    - part: "Exercises"
+      chapters:
+        - questions.qmd
+        - solutions.qmd
+  appendices:
     - deflist.qmd
   # downloads:
   #   - pdf
